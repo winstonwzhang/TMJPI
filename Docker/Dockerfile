@@ -1,0 +1,26 @@
+FROM ubuntu:latest
+
+WORKDIR /app
+
+RUN apt-get update
+RUN apt-get install -y wget
+RUN apt-get install -y zip
+
+RUN mkdir matlab_install matlab
+RUN wget https://ssd.mathworks.com/supportfiles/downloads/R2020a/Release/3/deployment_files/installer/complete/glnxa64/MATLAB_Runtime_R2020a_Update_3_glnxa64.zip && \
+    unzip MATLAB_Runtime_R2020a_Update_3_glnxa64.zip -d matlab_install
+RUN /app/matlab_install/install -mode silent -agreeToLicense yes -destinationFolder /app/matlab
+RUN rm -rf MATLAB_Runtime_R2020a_Update_3_glnxa64.zip && \
+    rm -rf MATLAB_Runtime_R2020a_Update_3_glnxa64
+
+RUN wget https://github.com/kayvanlabs/TMJ/releases/download/v1.0/DSCI_train
+RUN wget https://github.com/kayvanlabs/TMJ/releases/download/v1.0/DSCI_predict
+RUN chmod +x ./DSCI_train
+RUN chmod +x ./DSCI_predict
+
+RUN wget https://github.com/kayvanlabs/TMJ/releases/download/v1.0/Articular.xlsx
+RUN wget https://github.com/kayvanlabs/TMJ/releases/download/v1.0/Biological.csv
+RUN wget https://github.com/kayvanlabs/TMJ/releases/download/v1.0/Clinical.csv
+RUN wget https://github.com/kayvanlabs/TMJ/releases/download/v1.0/Condyle.csv
+
+ENV LD_LIBRARY_PATH=/app/matlab/v98/runtime/glnxa64:/app/matlab/v98/bin/glnxa64:/app/matlab/v98/sys/os/glnxa64:/app/matlab/v98/sys/opengl/lib/glnxa64
