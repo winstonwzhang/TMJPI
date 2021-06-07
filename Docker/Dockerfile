@@ -23,4 +23,5 @@ RUN wget https://github.com/winstonwzhang/TMJPI/releases/download/v1.0/Biologica
 RUN wget https://github.com/winstonwzhang/TMJPI/releases/download/v1.0/Clinical.csv
 RUN wget https://github.com/winstonwzhang/TMJPI/releases/download/v1.0/Condyle.csv
 
-ENV LD_LIBRARY_PATH=/app/matlab/v98/runtime/glnxa64:/app/matlab/v98/bin/glnxa64:/app/matlab/v98/sys/os/glnxa64:/app/matlab/v98/sys/opengl/lib/glnxa64
+ENV LD_LIBRARY_PATH=/app/matlab/v98/runtime/glnxa64:/app/matlab/v98/bin/glnxa64:/app/matlab/v98/sys/os/glnxa64:/app/matlab/v98/sys/opengl/lib/glnxa64:$LD_LIBRARY_PATH
+ENV PATH=/app:$PATH
