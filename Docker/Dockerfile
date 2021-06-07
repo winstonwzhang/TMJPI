@@ -13,15 +13,15 @@ RUN /app/matlab_install/install -mode silent -agreeToLicense yes -destinationFol
 RUN rm -rf MATLAB_Runtime_R2020a_Update_3_glnxa64.zip && \
     rm -rf MATLAB_Runtime_R2020a_Update_3_glnxa64
 
-RUN wget https://github.com/winstonwzhang/TMJPI/releases/download/v1.0/DSCI_train
-RUN wget https://github.com/winstonwzhang/TMJPI/releases/download/v1.0/DSCI_predict
+RUN wget https://github.com/DCBIA-OrthoLab/TMJPI/releases/download/v1.0/DSCI_train
+RUN wget https://github.com/DCBIA-OrthoLab/TMJPI/releases/download/v1.0/DSCI_predict
 RUN chmod +x ./DSCI_train
 RUN chmod +x ./DSCI_predict
 
-RUN wget https://github.com/winstonwzhang/TMJPI/releases/download/v1.0/Articular.xlsx
-RUN wget https://github.com/winstonwzhang/TMJPI/releases/download/v1.0/Biological.csv
-RUN wget https://github.com/winstonwzhang/TMJPI/releases/download/v1.0/Clinical.csv
-RUN wget https://github.com/winstonwzhang/TMJPI/releases/download/v1.0/Condyle.csv
+RUN wget https://github.com/DCBIA-OrthoLab/TMJPI/releases/download/v1.0/train_af.xlsx
+RUN wget https://github.com/DCBIA-OrthoLab/TMJPI/releases/download/v1.0/train_bl.csv
+RUN wget https://github.com/DCBIA-OrthoLab/TMJPI/releases/download/v1.0/train_cl.csv
+RUN wget https://github.com/DCBIA-OrthoLab/TMJPI/releases/download/v1.0/train_ct.csv
 
 ENV LD_LIBRARY_PATH=/app/matlab/v98/runtime/glnxa64:/app/matlab/v98/bin/glnxa64:/app/matlab/v98/sys/os/glnxa64:/app/matlab/v98/sys/opengl/lib/glnxa64:$LD_LIBRARY_PATH
 ENV PATH=/app:$PATH
