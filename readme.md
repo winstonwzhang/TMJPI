@@ -20,6 +20,8 @@ Takes training patient features as input and outputs trained model for privilege
 - file named "TMJPI_train.mat" that contains the best performing ensemble of models trained from the input features.
   The file is output to the [folder path] directory
 
+- file named
+
 ### Example usage:
 ./DSCI_train [AF_path] [BL_path] [CL_path] [CT_path] [folder path]
 
@@ -44,7 +46,7 @@ Takes testing patient features as input and outputs scores and predictions for e
 ### Outputs:
 Files output to [Folder path].
 - .mat file named "TMJPI_pred.mat" that contains the model scores and prediction (either 1 or 0 for OA or non-OA) for each testing patient.
-- .csv file named "TMJPI_pred.csv" that contains the model scores and prediction (either 1 or 0 for OA or non-OA) for each testing patient.
+- .csv file named "TMJPI_train_results.csv" that contains the scores for each evaluation metrixs.
 
 ### Example usage:
 ./DSCI_predict [AF_path] [CL_path] [CT_path] [model path] [folder path]
