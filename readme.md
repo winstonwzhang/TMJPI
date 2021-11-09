@@ -46,6 +46,7 @@ Takes testing patient features as input and outputs scores and predictions for e
 ### Outputs:
 Files output to [Folder path].
 - .mat file named "TMJPI_pred.mat" that contains the model scores and prediction (either 1 or 0 for OA or non-OA) for each testing patient.
+- .csv file named "TMJPI_pred.csv" that contains the model scores and prediction (either 1 or 0 for OA or non-OA) for each testing patient.
 - .csv file named "TMJPI_train_results.csv" that contains the scores for each evaluation metrixs.
 
 ### Example usage:
