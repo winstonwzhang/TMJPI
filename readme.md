@@ -5,11 +5,13 @@
 Takes training patient features as input and outputs trained model for privileged information prediction. Used ML model: KRVFL+ from the paper (P.-B. Zhang and Z.-X. Yang, “A new learning paradigm for random vector functional-link network: Rvfl+,” Neural Networks, vol. 122, pp. 94–105, 2020.)
 
 ### Requirements: 
-- All four input .csv or .xlsx files must have the same number of rows (i.e. same number of patients).
-- All four input .csv or .xlsx files must have column names indicating feature names.
-- All four input .csv or .xlsx files must have "patientId" as the first column and "group" as the second column, indicating patient names and labels respectively.
+- All five input .csv or .xlsx files must have the same number of rows (i.e. same number of patients).
+- All five input .csv or .xlsx files must have column names indicating feature names.
+- All five input .csv or .xlsx files must have "patientId" as the first column and "group" as the second column, indicating patient names and labels respectively.
+- The Age infomation must included in one of AE/AF/CT file and "Age" as the column name (case sensitive).
 
 ### Inputs:
+- [AE_path]: .csv or .xlsx file containing Articular Eminence features. Name of file must contain the substring "train_ae".
 - [AF_path]: .csv or .xlsx file containing Articular Fossa features. Name of file must contain the substring "train_af".
 - [BL_path]: .csv or .xlsx file containing Biological features. Name of file must contain the substring "train_bl".
 - [CL_path]: .csv or .xlsx file containing Clinical features. Name of file must contain the substring "train_cl".
@@ -23,7 +25,7 @@ Takes training patient features as input and outputs trained model for privilege
 - file named "TMJPI_train_results.csv" that contains the scores for each evaluation metrixs.
 
 ### Example usage:
-./DSCI_train [AF_path] [BL_path] [CL_path] [CT_path] [folder path]
+./DSCI_train [AE_path] [AF_path] [BL_path] [CL_path] [CT_path] [folder path]
 
 ---
 
@@ -32,11 +34,13 @@ Takes training patient features as input and outputs trained model for privilege
 Takes testing patient features as input and outputs scores and predictions for each testing patient.
 
 ### Requirements: 
-- All three input .csv or .xlsx files must have the same number of rows (i.e. same number of patients).
-- All three input .csv or .xlsx files must have column names indicating feature names.
-- All three input .csv or .xlsx files must have "patientId" as the first column indicating patient names. No "group" column or patient label column should be present.
+- All four input .csv or .xlsx files must have the same number of rows (i.e. same number of patients).
+- All four input .csv or .xlsx files must have column names indicating feature names.
+- All four input .csv or .xlsx files must have "patientId" as the first column indicating patient names. No "group" column or patient label column should be present.
+- The order of features in the test files must be identical to those in training inputs.
 
 ### Inputs:
+- [AE_path]: .csv or .xlsx file containing Articular Eminence features. Name of file must contain the substring "test_ae".
 - [AF_path]: .csv or .xlsx file containing Articular Fossa features. Name of file must contain the substring "test_af".
 - [CL_path]: .csv or .xlsx file containing Clinical features. Name of file must contain the substring "test_cl".
 - [CT_path]: .csv or .xlsx file containing Condyle Trabecular features. Name of file must contain the substring "test_ct".
@@ -50,4 +54,4 @@ Files output to [Folder path].
 
 
 ### Example usage:
-./DSCI_predict [AF_path] [CL_path] [CT_path] [model path] [folder path]
+./DSCI_predict [AE_path] [AF_path] [CL_path] [CT_path] [model path] [folder path]
