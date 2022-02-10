@@ -13,21 +13,17 @@ RUN /app/matlab_install/install -mode silent -agreeToLicense yes -destinationFol
 RUN rm -rf MATLAB_Runtime_R2020a_Update_3_glnxa64.zip && \
     rm -rf MATLAB_Runtime_R2020a_Update_3_glnxa64
 
-RUN wget https://github.com/DCBIA-OrthoLab/TMJPI/releases/download/v1.3/DSCI_train
-RUN wget https://github.com/DCBIA-OrthoLab/TMJPI/releases/download/v1.3/DSCI_predict
+RUN wget https://github.com/DCBIA-OrthoLab/TMJPI/releases/download/v1.4/DSCI_train
+RUN wget https://github.com/DCBIA-OrthoLab/TMJPI/releases/download/v1.4/DSCI_predict
 RUN chmod +x ./DSCI_train
 RUN chmod +x ./DSCI_predict
 
-RUN wget https://github.com/DCBIA-OrthoLab/TMJPI/releases/download/v1.3/train_ae.csv
-RUN wget https://github.com/DCBIA-OrthoLab/TMJPI/releases/download/v1.3/train_af.csv
-RUN wget https://github.com/DCBIA-OrthoLab/TMJPI/releases/download/v1.3/train_bl.csv
-RUN wget https://github.com/DCBIA-OrthoLab/TMJPI/releases/download/v1.3/train_cl.csv
-RUN wget https://github.com/DCBIA-OrthoLab/TMJPI/releases/download/v1.3/train_ct.csv
+RUN wget https://github.com/DCBIA-OrthoLab/TMJPI/releases/download/v1.4/train_bl.csv
+RUN wget https://github.com/DCBIA-OrthoLab/TMJPI/releases/download/v1.4/train_cl.csv
+RUN wget https://github.com/DCBIA-OrthoLab/TMJPI/releases/download/v1.4/train_ct.csv
 
-RUN wget https://github.com/DCBIA-OrthoLab/TMJPI/releases/download/v1.3/test_ae.csv
-RUN wget https://github.com/DCBIA-OrthoLab/TMJPI/releases/download/v1.3/test_af.csv
-RUN wget https://github.com/DCBIA-OrthoLab/TMJPI/releases/download/v1.3/test_cl.csv
-RUN wget https://github.com/DCBIA-OrthoLab/TMJPI/releases/download/v1.3/test_ct.csv
+RUN wget https://github.com/DCBIA-OrthoLab/TMJPI/releases/download/v1.4/test_cl.csv
+RUN wget https://github.com/DCBIA-OrthoLab/TMJPI/releases/download/v1.4/test_ct.csv
 
 ENV LD_LIBRARY_PATH=/app/matlab/v98/runtime/glnxa64:/app/matlab/v98/bin/glnxa64:/app/matlab/v98/sys/os/glnxa64:/app/matlab/v98/sys/opengl/lib/glnxa64:$LD_LIBRARY_PATH
 ENV PATH=/app:$PATH
