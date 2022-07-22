@@ -23,7 +23,7 @@ RUN wget https://github.com/DCBIA-OrthoLab/TMJPI/releases/download/v1.5/train_cl
 RUN wget https://github.com/DCBIA-OrthoLab/TMJPI/releases/download/v1.5/train_ct.csv
 
 RUN wget https://github.com/DCBIA-OrthoLab/TMJPI/releases/download/v1.5/test_cl.csv
-RUN wget https://github.com/DCBIA-OrthoLab/TMJPI/releases/download/v1.4/test_ct.csv
+RUN wget https://github.com/DCBIA-OrthoLab/TMJPI/releases/download/v1.5/test_ct.csv
 
 ENV LD_LIBRARY_PATH=/app/matlab/v98/runtime/glnxa64:/app/matlab/v98/bin/glnxa64:/app/matlab/v98/sys/os/glnxa64:/app/matlab/v98/sys/opengl/lib/glnxa64:$LD_LIBRARY_PATH
 ENV PATH=/app:$PATH
