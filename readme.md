@@ -50,3 +50,8 @@ Files output to [Folder path].
 
 ### Example usage:
 ./DSCI_predict[CL_path] [CT_path] [model path] [folder path]
+
+
+### Notes:
+- One more random seed for repeated cross-validation has been added to TMJPI compared to the published paper. We do 11 times five-fold CV to avoid the edge case in which the half/half model votes for negative and positive. 
+- We calculated the final prediction score by binarizing the prediction probability with the optimal training threshold in each model. The most frequency category counted for the final prediction result.
